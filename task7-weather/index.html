@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroWeather - Real-Time Weather & 3-Day Forecast Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="weather-app">
+    <!-- Top Search & Controls Bar -->
+    <header class="app-topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+          </svg>
+        </div>
+        <span class="brand-title">Aero<span>Weather</span></span>
+      </div>
+
+      <!-- Search Form -->
+      <form class="search-form" id="searchForm">
+        <div class="search-input-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="cityInput" 
+            placeholder="Search any city (e.g. London, Tokyo, New York)..." 
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="btn-search" aria-label="Search">Search</button>
+        </div>
+      </form>
+
+      <div class="topbar-actions">
+        <!-- Bonus: Current Location Button -->
+        <button class="icon-action-btn" id="geoBtn" title="Use My Current Location" aria-label="Auto-fetch current location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+          </svg>
+          <span class="btn-text">My Location</span>
+        </button>
+
+        <!-- Temperature Unit Toggle -->
+        <div class="unit-toggle" id="unitToggle">
+          <button class="unit-btn active" data-unit="c">°C</button>
+          <button class="unit-btn" data-unit="f">°F</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick City Pills -->
+    <div class="city-chips-bar">
+      <span class="chips-label">Popular Hubs:</span>
+      <div class="chips-list">
+        <button class="city-chip active" data-city="London">London</button>
+        <button class="city-chip" data-city="New York">New York</button>
+        <button class="city-chip" data-city="Tokyo">Tokyo</button>
+        <button class="city-chip" data-city="Paris">Paris</button>
+        <button class="city-chip" data-city="Dubai">Dubai</button>
+        <button class="city-chip" data-city="Sydney">Sydney</button>
+      </div>
+    </div>
+
+    <!-- Main Dashboard Body -->
+    <main class="dashboard-content" id="dashboardContent">
+      <!-- Loading Skeleton (Shown during fetch) -->
+      <div class="loading-state hidden" id="loadingState">
+        <div class="spinner"></div>
+        <p>Fetching real-time satellite telemetry...</p>
+      </div>
+
+      <!-- Error State Notice -->
+      <div class="error-notice hidden" id="errorNotice">
+        <div class="error-icon">⚠️</div>
+        <div class="error-msg">
+          <h4 id="errorTitle">Location Not Found</h4>
+          <p id="errorDesc">Could not locate weather data for the specified query. Please verify the city spelling.</p>
+        </div>
+      </div>
+
+      <!-- Weather Data Display -->
+      <div class="weather-grid" id="weatherDisplay">
+        <!-- Hero Condition Card -->
+        <section class="hero-weather-card" id="heroCard">
+          <div class="hero-top">
+            <div>
+              <h2 class="location-name" id="cityName">London, United Kingdom</h2>
+              <span class="current-date" id="currentDate">Thursday, Oct 1</span>
+            </div>
+            <div class="weather-glyph-large" id="mainWeatherIcon">⛅</div>
+          </div>
+
+          <div class="hero-temp-row">
+            <div class="temp-huge">
+              <span id="tempValue">18</span><span class="temp-unit">°C</span>
+            </div>
+            <div class="condition-details">
+              <span class="condition-text" id="weatherCondition">Partly Cloudy</span>
+              <span class="feels-like">Feels like <strong id="feelsLike">17°C</strong></span>
+            </div>
+          </div>
+
+          <div class="hero-high-low">
+            <span>High: <strong id="tempMax">20°C</strong></span>
+            <span class="sep">•</span>
+            <span>Low: <strong id="tempMin">12°C</strong></span>
+            <span class="sep">•</span>
+            <span>Precipitation: <strong id="precipProb">15%</strong></span>
+          </div>
+        </section>
+
+        <!-- Secondary Metrics Matrix -->
+        <section class="metrics-card">
+          <h3 class="card-heading">Atmospheric Conditions</h3>
+          <div class="metrics-subgrid">
+            <div class="metric-box">
+              <span class="m-icon">💧</span>
+              <span class="m-label">Humidity</span>
+              <span class="m-val" id="valHumidity">68%</span>
+            </div>
+            <div class="metric-box">
+              <span class="m-icon">💨</span>
+              <span class="m-label">Wind Speed</span>
+              <span class="m-val" id="valWind">14 km/h</span>
+            </div>
+            <div class="metric-box">
+              <span class="m-icon">☀️</span>
+              <span class="m-label">UV Index</span>
+              <span class="m-val" id="valUV">4 (Moderate)</span>
+            </div>
+            <div class="metric-box">
+              <span class="m-icon">🧭</span>
+              <span class="m-label">Air Pressure</span>
+              <span class="m-val" id="valPressure">1016 hPa</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3-Day Forecast Section (Required) -->
+        <section class="forecast-section full-col">
+          <div class="forecast-header">
+            <h3>3-Day Extended Forecast</h3>
+            <span class="forecast-sub">Precision daily weather trajectory</span>
+          </div>
+
+          <div class="forecast-grid" id="forecastGrid">
+            <!-- 3 Day Cards dynamically rendered -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Powered by Open-Meteo & OpenWeatherMap APIs • Elevvo Internship Level 3 Task 7</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

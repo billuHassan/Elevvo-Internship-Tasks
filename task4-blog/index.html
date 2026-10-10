@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Modern Engineer — Personal Tech & Lifestyle Journal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Top Header with Blog Title -->
+    <header class="blog-header">
+      <div class="header-inner">
+        <div class="header-branding">
+          <span class="blog-badge">Level 2 — Task 4</span>
+          <h1 class="blog-title">The Modern Journal</h1>
+          <p class="blog-subtitle">Reflections on software craftsmanship, global nomadic adventures, and culinary explorations.</p>
+        </div>
+
+        <!-- Search Input (Bonus Requirement: filter posts by title keyword) -->
+        <div class="search-wrap">
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Search articles by title keyword..." 
+              autocomplete="off"
+            >
+            <button id="clearSearchBtn" class="clear-btn hidden" aria-label="Clear search">✕</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Filters Navigation -->
+    <nav class="category-nav" aria-label="Article categories">
+      <div class="category-list" id="categoryList">
+        <button class="cat-pill active" data-category="ALL">All Posts <span class="pill-count" id="count-all">12</span></button>
+        <button class="cat-pill" data-category="Tech">Tech <span class="pill-count" id="count-tech">4</span></button>
+        <button class="cat-pill" data-category="Travel">Travel <span class="pill-count" id="count-travel">4</span></button>
+        <button class="cat-pill" data-category="Food">Food <span class="pill-count" id="count-food">4</span></button>
+      </div>
+
+      <div class="per-page-selector">
+        <label for="perPageSelect">Per page:</label>
+        <select id="perPageSelect">
+          <option value="6" selected>6 posts</option>
+          <option value="9">9 posts</option>
+          <option value="12">12 posts</option>
+        </select>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+      <!-- Status Bar -->
+      <div class="filter-status-bar">
+        <span id="resultsCount">Showing 1–6 of 12 articles</span>
+        <span id="activeFilterLabel"></span>
+      </div>
+
+      <!-- Blog Post Cards Grid -->
+      <div class="posts-grid" id="postsGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <h3>No articles found</h3>
+        <p>No posts matched your current search and category criteria. Try broadening your keywords.</p>
+        <button class="btn-reset" id="resetFiltersBtn">Reset Filters</button>
+      </div>
+
+      <!-- Pagination Controls (Required: limit number of visible posts per page) -->
+      <nav class="pagination-bar" id="paginationBar" aria-label="Pagination">
+        <button class="page-btn prev-btn" id="prevBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Previous
+        </button>
+        <div class="page-numbers" id="pageNumbers"></div>
+        <button class="page-btn next-btn" id="nextBtn">
+          Next
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 The Modern Journal • Elevvo Internship Level 2 Task 4</p>
+        <div class="footer-links">
+          <a href="#">RSS Feed</a>
+          <a href="#">Newsletter</a>
+          <a href="#">GitHub</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

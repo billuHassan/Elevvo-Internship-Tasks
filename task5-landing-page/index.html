@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraMetrics - Next-Gen Cloud Observability & Performance</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="brand">
+        <div class="brand-glyph">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </div>
+        <span class="brand-name">Aura<span>Metrics</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#testimonials" class="nav-link">Customers</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#cta" class="nav-link">Enterprise</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button (Bonus Requirement) -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme (Light / Dark)">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="#pricing" class="btn btn-outline nav-signin">Sign In</a>
+        <a href="#cta" class="btn btn-primary">Deploy Free</a>
+
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-chip">
+        <span class="chip-status"></span>
+        <span>AuraMetrics v4.2 Observability Engine Live</span>
+      </div>
+
+      <h1 class="hero-heading">Instant Full-Stack Observability for Cloud-Scale Systems.</h1>
+      
+      <p class="hero-desc">
+        Eliminate blind spots across distributed microservices. AuraMetrics delivers sub-second trace aggregation, autonomous anomaly detection, and automated root cause triage.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#pricing" class="btn btn-primary btn-xl">
+          <span>Start 14-Day Free Trial</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#features" class="btn btn-secondary btn-xl">View Live Telemetry</a>
+      </div>
+
+      <!-- Real-Time Metrics Strip -->
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <span class="metric-num">99.999%</span>
+          <span class="metric-lbl">High Availability SLA</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-num">&lt; 0.8ms</span>
+          <span class="metric-lbl">P99 Trace Ingestion</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-num">14B+</span>
+          <span class="metric-lbl">Events Processed Daily</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-num">73%</span>
+          <span class="metric-lbl">MTTR Reduction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="tag">Platform Capabilities</span>
+        <h2 class="title">Engineered for Zero-Downtime Infrastructure</h2>
+        <p class="subtitle">Purpose-built from the kernel up to correlate metrics, traces, and logs in a unified high-throughput graph.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="f-icon cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <h3>Distributed Tracing</h3>
+          <p>Propagate context across hundreds of serverless functions and Kubernetes clusters with automated OpenTelemetry instrumentation.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="f-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>AI Root Cause Triage</h3>
+          <p>Pinpoint the exact deployment commit or database deadlock causing latency spikes before customers ever experience degradation.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="f-icon green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Zero-Trust Data Redaction</h3>
+          <p>Automatic client-side scrubbing of PII, tokens, and authorization headers to maintain HIPAA, SOC2 Type II, and GDPR compliance.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="f-icon amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <h3>Sub-Millisecond Querying</h3>
+          <p>Query petabytes of timeseries telemetry in milliseconds using our vectorized ClickHouse storage engine and PromQL compatibility.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="f-icon red">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <h3>Smart Alert De-duplication</h3>
+          <p>Correlate cascading alarms into a single actionable incident ticket with integrated PagerDuty, OpsGenie, and Slack dispatches.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="f-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3>Custom Grafana Dashboards</h3>
+          <p>Drop-in interactive dashboards with ready-made widgets for CPU throttling, memory leaks, garbage collection, and database connection pools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="tag">Proven at Scale</span>
+        <h2 class="title">Trusted by Modern Engineering Leaders</h2>
+        <p class="subtitle">Here is how high-scale tech organizations protect their SLAs with AuraMetrics.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-mark">“</div>
+          <p class="t-text">During Black Friday our traffic increased by 600%. AuraMetrics immediately identified a Redis pool starvation issue that would have cost us hundreds of thousands in downtime.</p>
+          <div class="t-author">
+            <div class="author-avatar av-1">DM</div>
+            <div>
+              <div class="author-name">David Miller</div>
+              <div class="author-role">Principal SRE at FinCore Global</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-mark">“</div>
+          <p class="t-text">The automatic OpenTelemetry integration alone saved our team three months of manual collector configuration. We went from zero visibility to deep distributed traces in an afternoon.</p>
+          <div class="t-author">
+            <div class="author-avatar av-2">AT</div>
+            <div>
+              <div class="author-name">Amina Taylor</div>
+              <div class="author-role">Director of Platform at BioScale AI</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-mark">“</div>
+          <p class="t-text">Replacing our legacy APM cut our observability bill by 60% while giving us faster queries and zero sampling compromises. It's the standard tool in our developer onboarding.</p>
+          <div class="t-author">
+            <div class="author-avatar av-3">JL</div>
+            <div>
+              <div class="author-name">Jonathan Lee</div>
+              <div class="author-role">Chief Technology Officer at OrbitMedia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="tag">Transparent Investment</span>
+        <h2 class="title">Predictable Pricing for Any Scale</h2>
+        <p class="subtitle">Pay only for active hosts and ingested events with zero hidden egress charges.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Developer</h3>
+            <p>For independent devs and staging environments.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount">0</span>
+              <span class="period">/ mo</span>
+            </div>
+          </div>
+          <ul class="plan-perks">
+            <li>✓ Up to 5 hosts / serverless containers</li>
+            <li>✓ 3-day telemetry retention</li>
+            <li>✓ Community Discord support</li>
+            <li>✓ Standard metric dashboards</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline btn-block">Deploy Free</a>
+        </div>
+
+        <!-- Scale Plan (Featured) -->
+        <div class="pricing-card featured-plan">
+          <div class="popular-ribbon">RECOMMENDED</div>
+          <div class="plan-header">
+            <h3>Production</h3>
+            <p>For high-traffic production workloads.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount">79</span>
+              <span class="period">/ host / mo</span>
+            </div>
+          </div>
+          <ul class="plan-perks">
+            <li>✓ Unlimited hosts & microservices</li>
+            <li>✓ 30-day high-resolution retention</li>
+            <li>✓ Autonomous AI anomaly detection</li>
+            <li>✓ PagerDuty & Slack smart alerts</li>
+            <li>✓ SOC2 Type II compliance reports</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary btn-block">Start 14-Day Trial</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Enterprise</h3>
+            <p>For multi-region and strict compliance needs.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount">249</span>
+              <span class="period">/ host / mo</span>
+            </div>
+          </div>
+          <ul class="plan-perks">
+            <li>✓ 365-day cold archive retention</li>
+            <li>✓ Custom VPC / On-Premise deployment</li>
+            <li>✓ Dedicated Technical Account Manager</li>
+            <li>✓ 99.999% uptime SLA guarantee</li>
+            <li>✓ Single Sign-On (SAML / Okta)</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline btn-block">Schedule Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action Section -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-badge">Deploy in 5 Minutes</div>
+        <h2>Ready to eliminate downtime and debug faster?</h2>
+        <p>Join thousands of high-velocity engineers who trust AuraMetrics for zero-latency observability.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary btn-lg">Start Free Sandbox</a>
+          <a href="#" class="btn btn-secondary btn-lg">Book Architecture Review</a>
+        </div>
+        <span class="cta-guarantee">No credit card required • Instant cluster connect • SOC2 Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#" class="brand">
+          <div class="brand-glyph">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+          </div>
+          <span class="brand-name">Aura<span>Metrics</span></span>
+        </a>
+        <p class="footer-note">Next-generation distributed cloud observability platform. Elevvo Internship Task 5.</p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Integrations</a>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">OpenTelemetry Guide</a>
+          <a href="#">API Reference</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Security & Trust</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal container">
+      <p>&copy; 2026 AuraMetrics Inc. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">System Status: All Operational</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

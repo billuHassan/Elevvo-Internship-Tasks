@@ -1,0 +1,118 @@
+/* Modal Styles */
+.ds-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  animation: ds-modal-fade 180ms ease-out;
+}
+
+@keyframes ds-modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ds-modal-content {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  animation: ds-modal-zoom 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@keyframes ds-modal-zoom {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Modal Sizes */
+.ds-modal-content--sm {
+  max-width: 400px;
+}
+
+.ds-modal-content--md {
+  max-width: 560px;
+}
+
+.ds-modal-content--lg {
+  max-width: 768px;
+}
+
+.ds-modal-content--full {
+  max-width: 95vw;
+  height: 90vh;
+}
+
+.ds-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+.ds-modal-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ds-modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.ds-modal-description {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.ds-modal-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.375rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease;
+}
+
+.ds-modal-close:hover {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.ds-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.ds-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #334155;
+  background-color: rgba(15, 23, 42, 0.4);
+}
+

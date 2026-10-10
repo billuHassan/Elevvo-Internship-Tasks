@@ -1,0 +1,102 @@
+/* Input Styles */
+.ds-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: auto;
+}
+
+.ds-input-wrapper--full-width {
+  width: 100%;
+}
+
+.ds-input-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ds-input-required {
+  color: #ef4444;
+}
+
+.ds-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0 0.75rem;
+  transition: all 180ms ease;
+}
+
+.ds-input-container:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.ds-input-container--error {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+.ds-input-container--error:focus-within {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.ds-input-container--disabled {
+  opacity: 0.6;
+  background-color: #0f172a;
+  cursor: not-allowed;
+}
+
+.ds-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.625rem 0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #f8fafc;
+}
+
+.ds-input-field::placeholder {
+  color: #64748b;
+}
+
+.ds-input-field:disabled {
+  cursor: not-allowed;
+}
+
+.ds-input-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+}
+
+.ds-input-icon--left {
+  margin-right: 0.5rem;
+}
+
+.ds-input-icon--right {
+  margin-left: 0.5rem;
+}
+
+.ds-input-message {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.ds-input-message--error {
+  color: #ef4444;
+}
+
+.ds-input-message--helper {
+  color: #94a3b8;
+}
+

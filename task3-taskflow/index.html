@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Organize Tasks, Ship Projects Faster</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span class="logo-text">Task<span>Flow</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#reviews" class="nav-item">Reviews</a>
+        <a href="#pricing" class="nav-item">Pricing</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#pricing" class="btn btn-sm btn-primary mobile-cta">Start Free</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#pricing" class="btn btn-sm btn-outline">Sign In</a>
+        <a href="#pricing" class="btn btn-sm btn-primary">Start Free</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        <span>Version 2.4 Released with AI Task Scheduling</span>
+      </div>
+
+      <h1 class="hero-title reveal">Organize work, track progress, and ship products effortlessly.</h1>
+      
+      <p class="hero-subtitle reveal">
+        TaskFlow unifies daily tasks, sprint milestones, and distributed team coordination into one fast, intuitive workspace. Say goodbye to scattered spreadsheets.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#pricing" class="btn btn-lg btn-primary">
+          <span>Start 14-Day Free Trial</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#features" class="btn btn-lg btn-secondary">Explore Features</a>
+      </div>
+
+      <div class="hero-social-proof reveal">
+        <div class="avatar-stack">
+          <div class="avatar-circle">AK</div>
+          <div class="avatar-circle">MR</div>
+          <div class="avatar-circle">SL</div>
+          <div class="avatar-circle">TW</div>
+        </div>
+        <div class="proof-text">
+          <div class="stars">★★★★★</div>
+          <span>Trusted by <strong>18,000+</strong> engineering and design teams</span>
+        </div>
+      </div>
+
+      <!-- App Mockup Preview UI -->
+      <div class="app-mockup-frame reveal">
+        <div class="mockup-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-title">TaskFlow Board — Sprint #42 (Elevvo Workspace)</div>
+        </div>
+        <div class="mockup-body">
+          <div class="board-column">
+            <div class="col-head">
+              <span class="col-title">To Do</span>
+              <span class="count-tag">3</span>
+            </div>
+            <div class="task-card">
+              <span class="card-tag tag-blue">Frontend</span>
+              <h4>Implement OAuth2 Login Flow</h4>
+              <div class="card-meta">
+                <span>Due in 2 days</span>
+                <span class="user-init">AL</span>
+              </div>
+            </div>
+            <div class="task-card">
+              <span class="card-tag tag-orange">Design</span>
+              <h4>Revamp Design Tokens & Typography</h4>
+              <div class="card-meta">
+                <span>Due in 3 days</span>
+                <span class="user-init">EL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="board-column">
+            <div class="col-head">
+              <span class="col-title">In Progress</span>
+              <span class="count-tag active">2</span>
+            </div>
+            <div class="task-card active-card">
+              <span class="card-tag tag-purple">Architecture</span>
+              <h4>Setup CI/CD Pipeline on GitHub Actions</h4>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" style="width: 75%;"></div>
+              </div>
+              <div class="card-meta">
+                <span>75% Completed</span>
+                <span class="user-init">JD</span>
+              </div>
+            </div>
+            <div class="task-card">
+              <span class="card-tag tag-green">Performance</span>
+              <h4>Audit Core Web Vitals (Lighthouse)</h4>
+              <div class="card-meta">
+                <span>Ongoing</span>
+                <span class="user-init">MK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="board-column">
+            <div class="col-head">
+              <span class="col-title">Completed</span>
+              <span class="count-tag">4</span>
+            </div>
+            <div class="task-card completed-card">
+              <span class="card-tag tag-emerald">Release</span>
+              <h4>Deploy V1.0 Collapsible Sidebar</h4>
+              <div class="card-meta">
+                <span>✓ Shipped</span>
+                <span class="user-init">BH</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (3 Features Required) -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tag">Powerful Capabilities</span>
+        <h2 class="section-title">Built for High-Velocity Modern Teams</h2>
+        <p class="section-desc">Everything you need to eliminate friction, automate busywork, and keep everyone aligned on project goals.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <article class="feature-card reveal">
+          <div class="feature-icon bg-indigo">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3>Smart Workflow Automation</h3>
+          <p>Eliminate manual updates. Set automated triggers that reassign tasks, update sprint statuses, and notify team members upon code commits or state changes.</p>
+          <ul class="feature-bullet-list">
+            <li>No-code rule builder</li>
+            <li>GitHub, Jira & Slack webhooks</li>
+            <li>Custom priority escalations</li>
+          </ul>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="feature-card reveal">
+          <div class="feature-icon bg-blue">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Real-Time Team Sync</h3>
+          <p>Work alongside teammates simultaneously. See who is viewing or editing tasks with live cursor presence, inline mentions, and instantaneous comment synchronization.</p>
+          <ul class="feature-bullet-list">
+            <li>Zero-latency live state updates</li>
+            <li>Collaborative markdown descriptions</li>
+            <li>Instant thread notifications</li>
+          </ul>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="feature-card reveal">
+          <div class="feature-icon bg-emerald">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Deep Velocity Analytics</h3>
+          <p>Gain crystal-clear visibility into team capacity, burndown trajectories, and delivery bottlenecks with automatically calculated cycle-time metrics.</p>
+          <ul class="feature-bullet-list">
+            <li>Automated sprint burndown charts</li>
+            <li>Team workload balancing</li>
+            <li>Exportable CSV & PDF client reports</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section (2-3 Reviews Required) -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Loved by Engineering & Product Leaders</h2>
+        <p class="section-desc">See what technical managers and frontend leads are saying about adopting TaskFlow.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <blockquote class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"TaskFlow replaced three separate project tools for us. The interface is lightning fast, keyboard shortcuts are second nature, and our weekly sprint planning time dropped from two hours to 30 minutes."</p>
+          <footer class="reviewer-meta">
+            <div class="reviewer-avatar">SC</div>
+            <div>
+              <cite class="reviewer-name">Sarah Chen</cite>
+              <span class="reviewer-role">VP of Engineering at CloudScale</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <!-- Review 2 -->
+        <blockquote class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The drag-and-drop experience and real-time collaboration are the smoothest I’ve used in any web app. Our designers and frontend engineers finally share a single source of truth."</p>
+          <footer class="reviewer-meta">
+            <div class="reviewer-avatar">MR</div>
+            <div>
+              <cite class="reviewer-name">Marcus Rodriguez</cite>
+              <span class="reviewer-role">Design Systems Lead at PulseTech</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <!-- Review 3 -->
+        <blockquote class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"As a growing agency delivering dozens of client projects, TaskFlow’s permissions, custom tags, and velocity dashboards made client reporting entirely effortless."</p>
+          <footer class="reviewer-meta">
+            <div class="reviewer-avatar">EL</div>
+            <div>
+              <cite class="reviewer-name">Elena Rostova</cite>
+              <span class="reviewer-role">Managing Director at Elevvo Agency</span>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section (3 Pricing Options: Free, Pro, Team) -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tag">Transparent Plans</span>
+        <h2 class="section-title">Simple, Predictable Pricing</h2>
+        <p class="section-desc">Choose the plan that suits your team size. Switch or cancel anytime.</p>
+        
+        <!-- Monthly / Annual Toggle -->
+        <div class="pricing-toggle-wrap">
+          <span class="toggle-label" id="label-monthly">Monthly</span>
+          <button class="pricing-toggle" id="billingToggle" aria-label="Toggle billing duration" aria-pressed="false">
+            <span class="toggle-slider"></span>
+          </button>
+          <span class="toggle-label" id="label-annual">Annual <span class="discount-badge">Save 20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Option 1: Free -->
+        <div class="pricing-card reveal">
+          <div class="pricing-badge-space"></div>
+          <div class="pricing-head">
+            <h3>Free</h3>
+            <p>For individuals and personal side projects.</p>
+            <div class="price-box">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="0" data-annual="0">0</span>
+              <span class="billing-cycle">/ forever</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Up to 3 active project boards</li>
+            <li>✓ Unlimited personal tasks</li>
+            <li>✓ Basic Kanban view</li>
+            <li>✓ 100 MB file attachments</li>
+            <li class="disabled">✕ Automated workflows</li>
+            <li class="disabled">✕ Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full">Get Started Free</a>
+        </div>
+
+        <!-- Option 2: Pro (Highlighted) -->
+        <div class="pricing-card featured reveal">
+          <div class="featured-badge">MOST POPULAR</div>
+          <div class="pricing-head">
+            <h3>Pro</h3>
+            <p>For power users and independent freelancers.</p>
+            <div class="price-box">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="12" data-annual="9">12</span>
+              <span class="billing-cycle">/ month</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Unlimited project boards</li>
+            <li>✓ Automated workflow rules (50/mo)</li>
+            <li>✓ Custom fields, tags & filters</li>
+            <li>✓ 10 GB cloud storage</li>
+            <li>✓ Calendar & Timeline Gantt views</li>
+            <li>✓ Standard email support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-full">Start 14-Day Pro Trial</a>
+        </div>
+
+        <!-- Option 3: Team -->
+        <div class="pricing-card reveal">
+          <div class="pricing-badge-space"></div>
+          <div class="pricing-head">
+            <h3>Team</h3>
+            <p>For growing teams needing advanced collaboration.</p>
+            <div class="price-box">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="29" data-annual="24">29</span>
+              <span class="billing-cycle">/ user / mo</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Everything in Pro plan</li>
+            <li>✓ Unlimited automated workflow rules</li>
+            <li>✓ Team permissions & role management</li>
+            <li>✓ Real-time collaboration & presence</li>
+            <li>✓ Burndown & velocity analytics</li>
+            <li>✓ 24/7 dedicated support & SLA</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full">Contact Team Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Contact Links & Social Media Icons -->
+  <footer class="footer" id="contact">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo footer-logo">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <span class="logo-text">Task<span>Flow</span></span>
+        </a>
+        <p class="footer-tagline">Empowering engineering teams worldwide to streamline execution and celebrate timely shipments.</p>
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Twitter/X" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="Discord" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6h0a14.5 14.5 0 0 0-4-1.2 1 1 0 0 0-.6.4 17.5 17.5 0 0 0-.9 1.8 13.5 13.5 0 0 0-5 0 17.5 17.5 0 0 0-.9-1.8 1 1 0 0 0-.6-.4A14.5 14.5 0 0 0 2 6a16.7 16.7 0 0 0 3 13.3 1 1 0 0 0 .7.4 14.3 14.3 0 0 0 4.3 1.3 1 1 0 0 0 .7-.3 10.3 10.3 0 0 0 1-1.3 9 9 0 0 1-2.9-1.4 1 1 0 0 1 1.2-1.6c2.7 1.8 5.7 1.8 8.4 0a1 1 0 0 1 1.2 1.6 9 9 0 0 1-2.9 1.4 10.3 10.3 0 0 0 1 1.3 1 1 0 0 0 .7.3 14.3 14.3 0 0 0 4.3-1.3 1 1 0 0 0 .7-.4A16.7 16.7 0 0 0 22 6a14.5 14.5 0 0 0-4-1.2z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-heading">Product</span>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing Plans</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-heading">Company</span>
+        <ul class="footer-links">
+          <li><a href="#">About TaskFlow</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Engineering Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-heading">Direct Contact</span>
+        <ul class="footer-contact-info">
+          <li><strong>Inquiries:</strong> hello@taskflow-app.io</li>
+          <li><strong>Support:</strong> help@taskflow-app.io</li>
+          <li><strong>Headquarters:</strong> 440 Brannan St, San Francisco, CA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; 2026 TaskFlow Technologies Inc. All rights reserved. Elevvo Internship Level 2 Task 3.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

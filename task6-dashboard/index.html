@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Client Studio - Freelance Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN for Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Persistent Sidebar -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="name">ApexStudio</span>
+          <span class="client-tag">Freelance Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <span class="menu-heading">DASHBOARD</span>
+        <button class="nav-btn active" data-view="overview">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+          <span>Overview</span>
+        </button>
+        <button class="nav-btn" data-view="projects">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span>Projects</span>
+          <span class="badge-count" id="sidebarProjectsCount">6</span>
+        </button>
+        <button class="nav-btn" data-view="settings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar-sm">BH</div>
+        <div class="user-meta">
+          <span class="user-name">Bilal Hassan</span>
+          <span class="user-role">Senior Consultant</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area with Persistent Top Header -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Open Sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <h2 class="view-title" id="currentViewTitle">Overview</h2>
+        </div>
+
+        <div class="header-right">
+          <!-- Notification Dropdown Component (Bonus Requirement) -->
+          <div class="notification-wrapper">
+            <button class="icon-btn" id="notifBtn" aria-label="Notifications" aria-expanded="false">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notif-badge" id="notifBadge">3</span>
+            </button>
+
+            <!-- Dropdown Menu with 3 recent mock activities -->
+            <div class="notification-dropdown" id="notifDropdown">
+              <div class="notif-header">
+                <span class="title">Recent Activity</span>
+                <button class="mark-read-btn" id="markReadBtn">Mark all as read</button>
+              </div>
+              <ul class="notif-list" id="notifList">
+                <li class="notif-item unread">
+                  <div class="notif-icon green">✓</div>
+                  <div class="notif-body">
+                    <p class="notif-text"><strong>Stripe Payout:</strong> Milestone #2 approved for SaaS Redesign ($8,500).</p>
+                    <span class="notif-time">15 mins ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon blue">💬</div>
+                  <div class="notif-body">
+                    <p class="notif-text"><strong>Client Feedback:</strong> TechCorp left feedback on Sprint #4 Figma prototype.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon purple">🚀</div>
+                  <div class="notif-body">
+                    <p class="notif-text"><strong>Deployment:</strong> Staging build v2.4 successfully deployed to Vercel.</p>
+                    <span class="notif-time">Yesterday</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="header-profile">
+            <div class="profile-avatar">BH</div>
+            <span class="profile-name">Bilal H.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Views Container (Client-Side SPA Routing without reload) -->
+      <main class="views-wrapper">
+        <!-- 1. OVERVIEW PAGE -->
+        <section class="page-view active" id="view-overview">
+          <!-- Summary Cards -->
+          <div class="summary-cards-grid">
+            <div class="metric-card">
+              <div class="card-icon-box bg-blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <div class="card-info">
+                <span class="card-label">Active Projects</span>
+                <h3 class="card-val">6 <span class="trend up">+2 this mo</span></h3>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="card-icon-box bg-emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="card-info">
+                <span class="card-label">YTD Earnings</span>
+                <h3 class="card-val">$48,250 <span class="trend up">+18.4%</span></h3>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="card-icon-box bg-amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="card-info">
+                <span class="card-label">Tasks Due Soon</span>
+                <h3 class="card-val">4 <span class="trend warn">2 urgent</span></h3>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="card-icon-box bg-purple">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div class="card-info">
+                <span class="card-label">Client Rating</span>
+                <h3 class="card-val">4.95 <span class="trend up">99% CSAT</span></h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Grid (Visuals Requirement: Monthly earnings bar chart + task distribution pie/doughnut) -->
+          <div class="charts-grid">
+            <div class="chart-card">
+              <div class="chart-header">
+                <h4>Monthly Revenue ($ USD)</h4>
+                <span class="chart-sub">Track invoiced earnings per month</span>
+              </div>
+              <div class="chart-container">
+                <canvas id="earningsChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <h4>Task Status Breakdown</h4>
+                <span class="chart-sub">Real-time deliverables status</span>
+              </div>
+              <div class="chart-container pie-container">
+                <canvas id="taskStatusChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Client Activity List -->
+          <div class="recent-activity-panel">
+            <div class="panel-header">
+              <h4>Recent Client Actions & Milestones</h4>
+            </div>
+            <ul class="activity-timeline">
+              <li class="timeline-entry">
+                <span class="timeline-dot blue"></span>
+                <div class="timeline-content">
+                  <span class="timeline-time">Today, 2:45 PM</span>
+                  <p>Invoiced <strong>HealthPulse Inc</strong> for Phase 2 API Architecture Deliverables ($6,400).</p>
+                </div>
+              </li>
+              <li class="timeline-entry">
+                <span class="timeline-dot green"></span>
+                <div class="timeline-content">
+                  <span class="timeline-time">Yesterday, 11:20 AM</span>
+                  <p>Client <strong>Veritas Media</strong> approved design system token specifications.</p>
+                </div>
+              </li>
+              <li class="timeline-entry">
+                <span class="timeline-dot purple"></span>
+                <div class="timeline-content">
+                  <span class="timeline-time">Oct 28, 4:00 PM</span>
+                  <p>Conducted weekly architecture review call with <strong>FinFlow Core Team</strong>.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 2. PROJECTS PAGE -->
+        <section class="page-view" id="view-projects">
+          <div class="projects-toolbar">
+            <div class="search-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="projectSearchInput" placeholder="Search projects or clients...">
+            </div>
+
+            <div class="filter-group">
+              <label for="statusFilter">Status:</label>
+              <select id="statusFilter">
+                <option value="ALL">All Statuses</option>
+                <option value="In Progress">In Progress</option>
+                <option value="In Review">In Review</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Projects Table Layout -->
+          <div class="projects-table-card">
+            <table class="projects-table" id="projectsTable">
+              <thead>
+                <tr>
+                  <th>Project Name</th>
+                  <th>Client</th>
+                  <th>Status</th>
+                  <th>Budget</th>
+                  <th>Deadline</th>
+                  <th>Progress</th>
+                </tr>
+              </thead>
+              <tbody id="projectsTableBody">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 3. PROFILE SETTINGS PAGE -->
+        <section class="page-view" id="view-settings">
+          <div class="settings-card">
+            <div class="settings-header">
+              <h3>Freelance Profile & Account Settings</h3>
+              <p>Manage your client-facing contact details, rates, and security credentials.</p>
+            </div>
+
+            <form id="profileSettingsForm" class="settings-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="profName">Full Name</label>
+                  <input type="text" id="profName" value="Bilal Hassan" required>
+                </div>
+                <div class="form-field">
+                  <label for="profEmail">Email Address</label>
+                  <input type="email" id="profEmail" value="bilal.hassan@apexstudio.io" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="profRate">Standard Hourly Rate ($ USD)</label>
+                  <input type="number" id="profRate" value="125">
+                </div>
+                <div class="form-field">
+                  <label for="profTimezone">Timezone</label>
+                  <select id="profTimezone">
+                    <option value="PST">Pacific Time (US & Canada)</option>
+                    <option value="EST">Eastern Time (US & Canada)</option>
+                    <option value="UTC" selected>UTC (Coordinated Universal Time)</option>
+                    <option value="GMT">GMT (London)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="profBio">Professional Bio</label>
+                <textarea id="profBio" rows="3">Senior Full-Stack & Frontend Engineer specializing in high-performance React architectures, TypeScript systems, and scalable UI components.</textarea>
+              </div>
+
+              <div class="settings-subheading">Security Credentials</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="profCurrentPass">Current Password</label>
+                  <input type="password" id="profCurrentPass" placeholder="••••••••••••">
+                </div>
+                <div class="form-field">
+                  <label for="profNewPass">New Password</label>
+                  <input type="password" id="profNewPass" placeholder="Leave blank to keep unchanged">
+                </div>
+              </div>
+
+              <div class="settings-actions">
+                <button type="submit" class="btn-save">Save Profile Changes</button>
+                <span class="save-status" id="saveStatus" aria-live="polite"></span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
